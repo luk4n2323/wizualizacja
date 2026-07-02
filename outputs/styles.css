@@ -68,6 +68,12 @@ svg {
   overflow: hidden;
 }
 
+@media (min-width: 981px) {
+  .page-shell {
+    padding-left: 168px;
+  }
+}
+
 .ambient-field {
   position: fixed;
   inset: 0;
@@ -90,30 +96,49 @@ main,
 
 .site-header {
   position: fixed;
-  inset: 18px 24px auto;
+  inset: 24px auto 24px 24px;
   z-index: 20;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 24px;
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 26px;
+  width: 120px;
+  padding: 14px;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
-  background: rgba(10, 6, 7, 0.55);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(211, 168, 94, 0.16), transparent 7rem),
+    linear-gradient(180deg, rgba(24, 7, 10, 0.9), rgba(6, 4, 5, 0.78) 54%, rgba(90, 7, 25, 0.72)),
+    rgba(10, 6, 7, 0.72);
   color: #fff;
-  backdrop-filter: blur(22px);
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(26px);
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.28),
+    inset 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.site-header::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  right: -1px;
+  bottom: 24px;
+  width: 1px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, transparent, rgba(241, 214, 149, 0.62), transparent);
+  opacity: 0.72;
 }
 
 .brand {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 12px;
   font-size: 0.92rem;
   font-weight: 700;
-  white-space: nowrap;
+  text-align: center;
 }
 
 .brand-mark {
@@ -128,13 +153,25 @@ main,
   letter-spacing: 0;
 }
 
+.site-header .brand span:last-child {
+  max-width: 74px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.75rem;
+  line-height: 1.1;
+}
+
 .nav-links {
-  justify-self: center;
+  counter-reset: side-nav;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 22px;
-  font-size: 0.84rem;
-  color: rgba(255, 255, 255, 0.74);
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.74rem;
 }
 
 .nav-links a,
@@ -142,17 +179,81 @@ main,
   transition: color 180ms ease;
 }
 
+.nav-links a {
+  counter-increment: side-nav;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  min-height: 50px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  text-align: center;
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.nav-links a::before {
+  content: "0" counter(side-nav);
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-bottom: 5px;
+  border: 1px solid rgba(241, 214, 149, 0.2);
+  border-radius: 999px;
+  color: var(--gold-soft);
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.62rem;
+  font-weight: 900;
+  opacity: 0.82;
+}
+
 .nav-links a:hover,
 .footer a:hover {
   color: var(--gold-soft);
 }
 
+.nav-links a:hover {
+  border-color: rgba(241, 214, 149, 0.2);
+  background:
+    linear-gradient(135deg, rgba(241, 214, 149, 0.12), rgba(255, 255, 255, 0.05)),
+    rgba(255, 255, 255, 0.08);
+  transform: translateX(3px);
+}
+
 .nav-cta {
-  padding: 11px 17px;
+  display: grid;
+  place-items: center;
+  min-height: 92px;
+  padding: 14px 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  font-size: 0.84rem;
+  background:
+    linear-gradient(145deg, var(--gold), var(--gold-soft)),
+    var(--gold);
+  color: var(--black);
+  font-size: 0.76rem;
   font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+  box-shadow:
+    0 16px 36px rgba(211, 168, 94, 0.2),
+    inset 0 1px rgba(255, 255, 255, 0.52);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 20px 44px rgba(211, 168, 94, 0.28),
+    inset 0 1px rgba(255, 255, 255, 0.62);
 }
 
 .hero {
@@ -1423,16 +1524,58 @@ body:has(.footer) {
 
 @media (max-width: 980px) {
   .site-header {
-    grid-template-columns: 1fr auto;
+    inset: auto 12px 12px;
+    width: auto;
+    min-height: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 999px;
+  }
+
+  .site-header::before {
+    display: none;
+  }
+
+  .site-header .brand {
+    flex-direction: row;
+  }
+
+  .site-header .brand span:last-child {
+    display: none;
   }
 
   .nav-links {
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4px;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .nav-links a {
+    width: auto;
+    min-height: 42px;
+    padding: 0 10px;
+    font-size: 0.72rem;
+  }
+
+  .nav-links a::before {
     display: none;
+  }
+
+  .nav-cta {
+    min-height: 42px;
+    padding: 0 14px;
+    white-space: nowrap;
   }
 
   .hero {
     min-height: 88svh;
-    padding-bottom: 168px;
+    padding-bottom: 188px;
   }
 
   .hero-overlay {
@@ -1444,6 +1587,10 @@ body:has(.footer) {
 
   .hero-media img {
     object-position: 64% center;
+  }
+
+  .hero-bottom-strip {
+    bottom: 92px;
   }
 
   .stats,
@@ -1483,22 +1630,23 @@ body:has(.footer) {
 
 @media (max-width: 640px) {
   .site-header {
-    inset: 12px 12px auto;
-    padding: 8px;
+    inset: auto 10px 10px;
+    gap: 6px;
   }
 
-  .brand span:last-child {
+  .nav-links a:nth-child(1),
+  .nav-links a:nth-child(4) {
     display: none;
   }
 
   .nav-cta {
-    padding: 10px 13px;
-    font-size: 0.78rem;
+    padding: 0 10px;
+    font-size: 0.7rem;
   }
 
   .hero {
     min-height: 88svh;
-    padding: 104px 18px 194px;
+    padding: 64px 18px 208px;
   }
 
   h1 {
@@ -1516,7 +1664,7 @@ body:has(.footer) {
 
   .hero-bottom-strip {
     right: 12px;
-    bottom: 12px;
+    bottom: 82px;
     left: 12px;
     grid-template-columns: 1fr;
   }
