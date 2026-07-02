@@ -3,11 +3,18 @@ const statNumbers = document.querySelectorAll(".stat-number");
 const testimonials = document.querySelectorAll(".testimonial");
 const sliderButtons = document.querySelectorAll("[data-slider]");
 const tiltCards = document.querySelectorAll(".tilt-card");
+const magneticButtons = document.querySelectorAll(".button");
 const contactForm = document.querySelector(".contact-form");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 let statsStarted = false;
 let activeTestimonial = 0;
+let pointerFrame = null;
+let pointerTarget = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+requestAnimationFrame(() => {
+  document.body.classList.add("is-ready");
+});
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
@@ -72,8 +79,15 @@ setInterval(() => {
 
 if (!reduceMotion) {
   window.addEventListener("pointermove", (event) => {
-    document.body.style.setProperty("--cursor-x", `${event.clientX}px`);
-    document.body.style.setProperty("--cursor-y", `${event.clientY}px`);
+    pointerTarget = { x: event.clientX, y: event.clientY };
+
+    if (!pointerFrame) {
+      pointerFrame = requestAnimationFrame(() => {
+        document.body.style.setProperty("--cursor-x", `${pointerTarget.x}px`);
+        document.body.style.setProperty("--cursor-y", `${pointerTarget.y}px`);
+        pointerFrame = null;
+      });
+    }
   });
 
   tiltCards.forEach((card) => {
@@ -86,6 +100,19 @@ if (!reduceMotion) {
 
     card.addEventListener("pointerleave", () => {
       card.style.transform = "";
+    });
+  });
+
+  magneticButtons.forEach((button) => {
+    button.addEventListener("pointermove", (event) => {
+      const rect = button.getBoundingClientRect();
+      const x = event.clientX - (rect.left + rect.width / 2);
+      const y = event.clientY - (rect.top + rect.height / 2);
+      button.style.transform = `translate(${x * 0.08}px, ${y * 0.12}px) translateY(-3px) scale(1.015)`;
+    });
+
+    button.addEventListener("pointerleave", () => {
+      button.style.transform = "";
     });
   });
 }
