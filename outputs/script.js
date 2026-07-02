@@ -95,7 +95,7 @@ if (!reduceMotion) {
       const rect = card.getBoundingClientRect();
       const x = (event.clientX - rect.left) / rect.width - 0.5;
       const y = (event.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `rotateX(${y * -7}deg) rotateY(${x * 9}deg) translateY(-6px)`;
+      card.style.transform = `rotateX(${y * -4}deg) rotateY(${x * 5}deg) translateY(-4px)`;
     });
 
     card.addEventListener("pointerleave", () => {
@@ -108,7 +108,7 @@ if (!reduceMotion) {
       const rect = button.getBoundingClientRect();
       const x = event.clientX - (rect.left + rect.width / 2);
       const y = event.clientY - (rect.top + rect.height / 2);
-      button.style.transform = `translate(${x * 0.08}px, ${y * 0.12}px) translateY(-3px) scale(1.015)`;
+      button.style.transform = `translate(${x * 0.04}px, ${y * 0.06}px) translateY(-2px)`;
     });
 
     button.addEventListener("pointerleave", () => {

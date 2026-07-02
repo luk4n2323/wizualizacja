@@ -10,7 +10,7 @@
   --muted: #80756d;
   --line: rgba(211, 168, 94, 0.2);
   --glass: rgba(255, 255, 255, 0.08);
-  --shadow: 0 28px 80px rgba(20, 4, 8, 0.18);
+  --shadow: 0 22px 58px rgba(20, 4, 8, 0.1);
   --radius: 8px;
   --max: 1180px;
   font-family:
@@ -679,14 +679,9 @@ h2 {
   border-radius: var(--radius);
   color: #fff;
   background:
-    linear-gradient(120deg, rgba(255, 255, 255, 0.065) 1px, transparent 1px),
-    radial-gradient(circle at 78% 12%, rgba(241, 214, 149, 0.2), transparent 20rem),
+    radial-gradient(circle at 78% 12%, rgba(241, 214, 149, 0.12), transparent 20rem),
     linear-gradient(145deg, #080506, #21070e 48%, #61081c);
-  background-size:
-    32px 32px,
-    auto,
-    auto;
-  box-shadow: 0 44px 120px rgba(90, 7, 25, 0.34);
+  box-shadow: 0 32px 90px rgba(90, 7, 25, 0.22);
 }
 
 .course-aura {
@@ -1199,14 +1194,9 @@ h2 {
   border-radius: var(--radius);
   color: #fff;
   background:
-    linear-gradient(120deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    radial-gradient(circle at 76% 18%, rgba(211, 168, 94, 0.22), transparent 25rem),
+    radial-gradient(circle at 76% 18%, rgba(211, 168, 94, 0.14), transparent 25rem),
     linear-gradient(135deg, var(--black), #21070e 56%, var(--burgundy));
-  background-size:
-    26px 26px,
-    auto,
-    auto;
-  box-shadow: 0 34px 100px rgba(90, 7, 25, 0.28);
+  box-shadow: 0 28px 76px rgba(90, 7, 25, 0.18);
 }
 
 .contact-copy {
@@ -1522,6 +1512,155 @@ body:has(.footer) {
   }
 }
 
+/* Minimal premium finish */
+.ambient-field {
+  opacity: 0.36;
+  background:
+    radial-gradient(circle at var(--cursor-x) var(--cursor-y), rgba(211, 168, 94, 0.13), transparent 22rem),
+    radial-gradient(circle at 88% 18%, rgba(90, 7, 25, 0.055), transparent 26rem);
+}
+
+.site-header {
+  width: 106px;
+  border-color: rgba(241, 214, 149, 0.16);
+  background: rgba(12, 6, 8, 0.78);
+  box-shadow:
+    0 22px 62px rgba(0, 0, 0, 0.22),
+    inset 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.site-header::before {
+  opacity: 0.38;
+}
+
+.nav-links {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.nav-links a {
+  width: 74px;
+  min-height: 46px;
+}
+
+.nav-links a::before {
+  width: auto;
+  height: auto;
+  border: 0;
+  background: transparent;
+  color: rgba(241, 214, 149, 0.62);
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.055);
+  border-color: rgba(241, 214, 149, 0.14);
+}
+
+.nav-cta {
+  min-height: 86px;
+  background: #dfbd72;
+  box-shadow: 0 14px 34px rgba(211, 168, 94, 0.18);
+}
+
+.button {
+  min-height: 50px;
+  border-width: 1px;
+  letter-spacing: 0;
+}
+
+.button::before {
+  display: none;
+}
+
+.button::after {
+  opacity: 0.26;
+}
+
+.button-primary {
+  background: linear-gradient(135deg, #c79742, #f0d58b);
+  box-shadow:
+    0 14px 34px rgba(211, 168, 94, 0.18),
+    inset 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.button-primary:hover {
+  box-shadow:
+    0 18px 40px rgba(211, 168, 94, 0.24),
+    inset 0 1px rgba(255, 255, 255, 0.56);
+}
+
+.button-secondary {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.075);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.stat-card,
+.course-card,
+.offer-card,
+.benefit-card,
+.testimonial,
+.timeline article,
+.accordion details,
+.deliverables,
+.contact-form {
+  border-color: rgba(90, 7, 25, 0.09);
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 18px 54px rgba(20, 4, 8, 0.08);
+}
+
+.course-showcase::before,
+.courses::before {
+  opacity: 0.42;
+}
+
+.course-hero-card {
+  border-color: rgba(241, 214, 149, 0.18);
+  background:
+    radial-gradient(circle at 80% 10%, rgba(241, 214, 149, 0.09), transparent 18rem),
+    linear-gradient(145deg, #090607, #1a070c 58%, #430816);
+}
+
+.course-aura {
+  opacity: 0.32;
+}
+
+.course-module-strip span,
+.course-hero-footer span,
+.course-meta span,
+.achievement-row span {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.contact-panel {
+  background:
+    radial-gradient(circle at 76% 18%, rgba(211, 168, 94, 0.09), transparent 25rem),
+    linear-gradient(135deg, #080506, #1d070d 58%, #4a0817);
+}
+
+.section-reveal {
+  clip-path: inset(18px 0 0 0 round 8px);
+  filter: blur(6px);
+  transform: translateY(28px) scale(0.988);
+  transition:
+    opacity 760ms ease,
+    transform 760ms cubic-bezier(0.16, 1, 0.3, 1),
+    clip-path 760ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 760ms ease;
+}
+
+.section-reveal :is(.stat-card, .course-hero-card, .course-card, .offer-card, .benefit-card, .timeline article, details, .contact-form, .implementation-header, .deliverables) {
+  transform: translateY(16px);
+  transition:
+    opacity 620ms ease,
+    transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 981px) {
+  .page-shell {
+    padding-left: 144px;
+  }
+}
+
 @media (max-width: 980px) {
   .site-header {
     inset: auto 12px 12px;
@@ -1660,6 +1799,10 @@ body:has(.footer) {
   .hero-actions,
   .button {
     width: 100%;
+  }
+
+  .hero-actions .button-secondary {
+    display: none;
   }
 
   .hero-bottom-strip {
