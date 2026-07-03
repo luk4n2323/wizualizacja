@@ -1635,6 +1635,49 @@ body:has(.footer) {
   background:
     radial-gradient(circle at 76% 18%, rgba(211, 168, 94, 0.09), transparent 25rem),
     linear-gradient(135deg, #080506, #1d070d 58%, #4a0817);
+  grid-template-columns: minmax(0, 0.76fr) minmax(420px, 0.72fr);
+  overflow: hidden;
+}
+
+.contact-copy {
+  min-width: 0;
+}
+
+.contact-copy h2 {
+  max-width: 620px;
+  font-size: clamp(2.55rem, 4.15vw, 4.35rem);
+  line-height: 1.02;
+  overflow-wrap: break-word;
+}
+
+.contact-panel .contact-form {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.085);
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.14),
+    0 22px 58px rgba(0, 0, 0, 0.14);
+}
+
+.premium-card {
+  border-color: rgba(241, 214, 149, 0.18);
+  background:
+    radial-gradient(circle at 88% 8%, rgba(241, 214, 149, 0.09), transparent 16rem),
+    linear-gradient(145deg, #090607, #1a070c 58%, #430816);
+  color: #fff;
+}
+
+.premium-card h3 {
+  color: #fff;
+}
+
+.premium-card li,
+.premium-card p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.premium-card .card-label,
+.premium-card a:not(.button) {
+  color: var(--gold-soft);
 }
 
 .section-reveal {
