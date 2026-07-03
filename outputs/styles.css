@@ -1657,7 +1657,87 @@ body:has(.footer) {
 
 @media (min-width: 981px) {
   .page-shell {
-    padding-left: 144px;
+    padding-left: 214px;
+  }
+
+  .site-header {
+    inset: 30px auto 30px 28px;
+    width: 170px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--ink);
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .site-header::before {
+    display: none;
+  }
+
+  .brand {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    min-height: 44px;
+  }
+
+  .site-header .brand span:last-child {
+    max-width: none;
+    color: var(--ink);
+    font-size: 0.86rem;
+    line-height: 1.05;
+    text-align: left;
+  }
+
+  .nav-links {
+    align-items: stretch;
+    gap: 9px;
+    padding: 0;
+    border: 0;
+    color: rgba(21, 16, 17, 0.58);
+    font-size: 0.82rem;
+  }
+
+  .nav-links a {
+    width: 100%;
+    min-height: 42px;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 0 12px;
+    border-color: rgba(90, 7, 25, 0.08);
+    background: rgba(255, 255, 255, 0.42);
+    color: inherit;
+    backdrop-filter: blur(16px);
+  }
+
+  .nav-links a::before {
+    content: "0" counter(side-nav);
+    margin: 0;
+    color: rgba(90, 7, 25, 0.46);
+    font-size: 0.66rem;
+  }
+
+  .nav-links a:hover {
+    color: var(--burgundy);
+    border-color: rgba(211, 168, 94, 0.22);
+    background: rgba(255, 255, 255, 0.74);
+    transform: translateX(4px);
+  }
+
+  .nav-cta {
+    min-height: 50px;
+    padding: 0 18px;
+    border: 1px solid rgba(90, 7, 25, 0.08);
+    background: linear-gradient(135deg, #c79742, #efd389);
+    font-size: 0.84rem;
+    line-height: 1;
+    white-space: nowrap;
+    box-shadow:
+      0 18px 40px rgba(211, 168, 94, 0.18),
+      inset 0 1px rgba(255, 255, 255, 0.56);
   }
 }
 
