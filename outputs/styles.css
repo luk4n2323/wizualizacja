@@ -1645,9 +1645,11 @@ body:has(.footer) {
 
 .contact-copy h2 {
   max-width: 620px;
-  font-size: clamp(2.55rem, 4.15vw, 4.35rem);
+  font-size: clamp(2.55rem, 4vw, 4.1rem);
   line-height: 1.02;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 .contact-panel .contact-form {
