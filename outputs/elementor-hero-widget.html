@@ -1,0 +1,251 @@
+<style>
+  #km-hero-elementor-2026,
+  #km-hero-elementor-2026 * {
+    box-sizing: border-box !important;
+  }
+
+  #km-hero-elementor-2026 {
+    --km-black: #060405;
+    --km-burgundy: #5a0719;
+    --km-gold: #d3a85e;
+    --km-gold-soft: #f1d695;
+    --km-text: #ffffff;
+    --km-muted: rgba(255, 255, 255, 0.74);
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding: 0 !important;
+    color: var(--km-text) !important;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    isolation: isolate !important;
+  }
+
+  #km-hero-elementor-2026 a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  #km-hero-elementor-2026 .km-hero {
+    position: relative !important;
+    min-height: 88svh !important;
+    display: grid !important;
+    align-items: center !important;
+    overflow: hidden !important;
+    padding: clamp(96px, 10vw, 150px) clamp(18px, 5vw, 72px) clamp(150px, 12vw, 180px) !important;
+    background: #080506 !important;
+  }
+
+  #km-hero-elementor-2026 .km-hero::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: -2 !important;
+    background-image: url("https://wizualizacja.onrender.com/assets/krzysztof-magda-hero.png") !important;
+    background-size: cover !important;
+    background-position: 64% center !important;
+  }
+
+  #km-hero-elementor-2026 .km-hero::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: -1 !important;
+    background:
+      radial-gradient(circle at 18% 22%, rgba(90, 7, 25, 0.72), transparent 32%),
+      linear-gradient(90deg, rgba(4, 2, 3, 0.95) 0%, rgba(4, 2, 3, 0.78) 42%, rgba(4, 2, 3, 0.34) 78%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.96)) !important;
+  }
+
+  #km-hero-elementor-2026 .km-hero-inner {
+    width: min(100%, 1180px) !important;
+    margin: 0 auto !important;
+  }
+
+  #km-hero-elementor-2026 .km-eyebrow {
+    margin: 0 0 18px !important;
+    color: var(--km-gold-soft) !important;
+    font-size: clamp(12px, 1.2vw, 14px) !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.12em !important;
+    line-height: 1.35 !important;
+    text-transform: uppercase !important;
+  }
+
+  #km-hero-elementor-2026 .km-title {
+    max-width: 780px !important;
+    margin: 0 0 28px !important;
+    color: #fff !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: clamp(72px, 12vw, 168px) !important;
+    font-weight: 500 !important;
+    line-height: 0.86 !important;
+    letter-spacing: 0 !important;
+  }
+
+  #km-hero-elementor-2026 .km-lead {
+    max-width: 720px !important;
+    margin: 0 !important;
+    color: var(--km-muted) !important;
+    font-size: clamp(18px, 2vw, 22px) !important;
+    line-height: 1.75 !important;
+    font-weight: 400 !important;
+  }
+
+  #km-hero-elementor-2026 .km-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 14px !important;
+    margin-top: 36px !important;
+  }
+
+  #km-hero-elementor-2026 .km-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 52px !important;
+    gap: 12px !important;
+    padding: 0 26px !important;
+    border-radius: 999px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    background: linear-gradient(135deg, #c79742, #f0d58b) !important;
+    color: #080506 !important;
+    box-shadow: 0 14px 34px rgba(211, 168, 94, 0.18), inset 0 1px rgba(255, 255, 255, 0.5) !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    text-align: center !important;
+  }
+
+  #km-hero-elementor-2026 .km-btn-secondary {
+    background: rgba(255, 255, 255, 0.075) !important;
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.1) !important;
+  }
+
+  #km-hero-elementor-2026 .km-stats {
+    position: absolute !important;
+    right: clamp(18px, 5vw, 72px) !important;
+    bottom: clamp(24px, 4vw, 44px) !important;
+    left: clamp(18px, 5vw, 72px) !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    width: min(calc(100% - 36px), 1180px) !important;
+    margin: 0 auto !important;
+    border: 1px solid rgba(255, 255, 255, 0.13) !important;
+    border-radius: 8px !important;
+    background: rgba(8, 5, 6, 0.62) !important;
+    backdrop-filter: blur(20px) !important;
+  }
+
+  #km-hero-elementor-2026 .km-stat {
+    padding: 18px 22px !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  #km-hero-elementor-2026 .km-stat:last-child {
+    border-right: 0 !important;
+  }
+
+  #km-hero-elementor-2026 .km-stat span {
+    display: block !important;
+    margin: 0 0 7px !important;
+    color: rgba(255, 255, 255, 0.54) !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
+  }
+
+  #km-hero-elementor-2026 .km-stat strong {
+    display: block !important;
+    color: #fff !important;
+    font-size: clamp(18px, 2vw, 24px) !important;
+    line-height: 1.2 !important;
+    font-weight: 900 !important;
+  }
+
+  @media (max-width: 767px) {
+    #km-hero-elementor-2026 .km-hero {
+      min-height: 92svh !important;
+      padding: 74px 18px 282px !important;
+    }
+
+    #km-hero-elementor-2026 .km-hero::before {
+      background-position: 68% center !important;
+    }
+
+    #km-hero-elementor-2026 .km-title {
+      font-size: clamp(58px, 19vw, 88px) !important;
+    }
+
+    #km-hero-elementor-2026 .km-lead {
+      font-size: 17px !important;
+      line-height: 1.7 !important;
+    }
+
+    #km-hero-elementor-2026 .km-actions {
+      margin-top: 30px !important;
+    }
+
+    #km-hero-elementor-2026 .km-btn {
+      width: 100% !important;
+      min-height: 54px !important;
+      font-size: 15px !important;
+    }
+
+    #km-hero-elementor-2026 .km-btn-secondary {
+      display: none !important;
+    }
+
+    #km-hero-elementor-2026 .km-stats {
+      right: 12px !important;
+      bottom: 26px !important;
+      left: 12px !important;
+      grid-template-columns: 1fr !important;
+      width: auto !important;
+    }
+
+    #km-hero-elementor-2026 .km-stat {
+      padding: 13px 16px !important;
+      border-right: 0 !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    #km-hero-elementor-2026 .km-stat:last-child {
+      border-bottom: 0 !important;
+    }
+  }
+</style>
+
+<div id="km-hero-elementor-2026">
+  <section class="km-hero" aria-label="Krzysztof Magda hero">
+    <div class="km-hero-inner">
+      <p class="km-eyebrow">Mentoring biznesowy i zarządzanie</p>
+      <h1 class="km-title">Krzysztof<br />Magda</h1>
+      <p class="km-lead">
+        Zarządzanie i mentoring to nie moja praca, a pasja. 25 lat doświadczenia w prowadzeniu ludzi,
+        budowaniu struktur i procesów, które pozwalają na rozwój firmy.
+      </p>
+      <div class="km-actions">
+        <a class="km-btn" href="#kontakt">Rozpocznij mentoring →</a>
+        <a class="km-btn km-btn-secondary" href="#kursy">Zobacz kurs online</a>
+      </div>
+    </div>
+
+    <div class="km-stats" aria-label="Najważniejsze informacje">
+      <div class="km-stat">
+        <span>Doświadczenie</span>
+        <strong>25 lat</strong>
+      </div>
+      <div class="km-stat">
+        <span>Skala zarządzania</span>
+        <strong>500 osób</strong>
+      </div>
+      <div class="km-stat">
+        <span>Rynek</span>
+        <strong>Wielka Brytania i Polska</strong>
+      </div>
+    </div>
+  </section>
+</div>
